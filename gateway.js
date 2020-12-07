@@ -35,43 +35,27 @@ app.post('/', function (req, res) {
 })
 
 //get req
-// Request.get("https://jsonplaceholder.typicode.com/posts", (error, response, body) => {
-//   if(error){
-//     return console.dir(error);
-//   }
-//   console.dir(JSON.parse(body));
-// })
+Request.get("https://jsonplaceholder.typicode.com/posts", (error, response, body) => {
+  if(error){
+    return console.log(error);
+  }
+  console.log(JSON.parse(body));
+})
 
 //post req
 Request.post({
   "headers": { "content-type": "application/json"},
   "url": "https://jsonplaceholder.typicode.com/posts",
   "body": JSON.stringify({
-    "firstname": "marcus",
+    "title": "marcus",
     "lastname": "galvin"
   })}, (error, response, body) => {
     if(error){
-      return console.dir(error);
+      return console.log(error);
     }
-    console.dir(JSON.parse(body));
+    console.log(JSON.parse(body));
   })
 
-
-
-
-
-//news post req
-// app.post("/", async (req, res) => {
-//   const data = req.body;
-//       try {
-//         res.send(getHeadlines());
-//         // console.log(data)
-//       } catch (err){
-//         res.status(500).json({message: error.message});
-//       }
-      
-  
-// })
 
 
 
